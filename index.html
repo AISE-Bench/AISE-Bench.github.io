@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AISE-Bench </title>
+
+    <link rel="icon" href="./static/images/lvbench.jpg">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/leaderboard.css">
+    <link rel="stylesheet" href="./static/css/video-player.css">
+
+
+    <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/explorer-index.js"></script>
+    <script src="./static/js/question_card.js"></script>
+
+    <style>
+        .no-sort {
+            cursor: default;
+            pointer-events: none;
+            background-image: none !important; /* Remove the sort arrow */
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+                <a class="navbar-link">
+                    More Research
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="https://github.com/THUDM/CogVLM2">
+                        <b>CogVLM2</b>
+                    </a>
+                    <a class="navbar-item" href="https://lvbench.github.io/">
+                        <b>LVBench</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav> -->
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title is-bold">
+                        <!-- <img src="static/image/motion-bench.png" style="width:1.6em;vertical-align: middle"
+                             alt="Logo"/> -->
+                        <span class="video-mme" style="vertical-align: middle">AISE-Bench</span>
+                    </h1>
+                    <h2 class="subtitle is-3 publication-subtitle" , style="margin-bottom: 20px;">
+                        A Full-Cycle Curated Benchmark for Information Seeking on Academic Knowledge Graphs
+                    </h2>
+
+                    <!-- <div class="is-size-5 publication-authors" , style="width: 80%; margin: 20px auto;" ,>
+
+                        <span class="author-block" , style="font-size:24px"><a
+                                href="https://github.com/THUDM/MotionBench">MotionBench Team</a></span>
+
+                    </div> -->
+
+                    <div class="is-size-5 publication-authors">
+
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2501.02955"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/AISE-Bench/AISE-Bench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                            <!-- Dataset Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/AISE-Bench/AISE-Bench/data"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">📊</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+                            <!-- Leaderboard Link. -->
+                            <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+                                <!-- <a href="https://huggingface.co/spaces/THUDM/MotionBench"
+                                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>HuggingFace Leaderboard</span>
+                </a> -->
+              </span>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Introduction</h2>
+                <div class="content has-text-justified">
+                    Large language models (LLMs) augmented with tools are emerging as autonomous agents capable of using Web engine, APIs, and code to solve complex, long-horizon tasks. Current tool-using bench-marks for information seeking on academic graphs rely on synthetic templates, simplified solution spaces, or narrow tasks such as paper-centric tasks, leaving key challenges underexplored - realistic user intent, complex multi-step API planning, rich parameter filling for APIs, low-hallucination answers with references, and comprehensive evaluation of both the process and the outcome.
+                    We introduce AISE-Bench, a real, full-cycle annotated benchmark for academic information seeking on academic knowledge graphs. Each sample includes a validated query taxonomy, full API execution trajectories, and source -grounded answers with reference links. To support high -quality annotation, we design an agent - assisted interface enabling annotators to plan, execute, and revise complex API workflows. We develop a comprehensive evaluation protocol measuring answer quality, reference grounding, API-planning
+                    correctness, hallucination, and execution success. Among the 14 evaluated methods, even the strongest model (PLAY2PROMPT with Gemini-3-pro-preview) achieves only moderate performance and
+                    often struggles with API planning and execution. AISE-Bench establishes a challenging new testbed for advancing more accurate, trustworthy, and interpretable multi-step API-using LLM agents.
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+</section>
+
+<style>
+.type-text {
+    background-color: #e3f2fd;   /* 浅蓝 */
+    color: #0d47a1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.type-visual {
+    background-color: #fce4ec;   /* 浅粉 */
+    color: #880e4f;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+</style>
+
+<!--leader board-->
+<section class="section">
+    <div class="container">
+
+        <div class="columns is-centered">
+            <div class="column is-full has-text-centered content">
+
+                <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+                <div class="content">
+                    <p class="mt-3">Main evaluation results on the test set.
+                    </p>
+
+                    <table class="js-sort-table" id="results">
+                        <thead>
+                        <tr>
+                            <th rowspan="2" class="no-sort" style="vertical-align: middle;"><strong>#</strong></th>
+                            <th rowspan="2" class="no-sort" style="vertical-align: middle;"><strong>Model</strong></th>
+                            <th colspan="3" class="no-sort" style="vertical-align: middle; text-align: center;"><strong>References and Formatting</strong></th>
+                            <th colspan="3" class="no-sort" style="vertical-align: middle; text-align: center;"><strong>API-based Judge</strong></th>
+                            <th colspan="4" class="no-sort" style="vertical-align: middle; text-align: center;"><strong>Answer Content</strong></th>
+                        </tr>
+                        <tr>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Precision</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Recall</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Format</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Edit Dist.</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Para. Acc.</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Success</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Correct.</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Complete.</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>Faithful.</strong></th>
+                            <th class="no-sort" style="vertical-align: middle;"><strong>F1-LM</strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- CAW -->
+                        <tr>
+                            <td style="vertical-align: middle;">CAW</td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2512.02556">Deepseek-V3.2</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">DeepSeek-AI</p></td>
+                            <td style="vertical-align: middle;">0.3544</td>
+                            <td style="vertical-align: middle;">0.3461</td>
+                            <td style="vertical-align: middle;">0.78</td>
+                            <td style="vertical-align: middle;">1.56</td>
+                            <td style="vertical-align: middle;">0.4453</td>
+                            <td style="vertical-align: middle;">0.8267</td>
+                            <td style="vertical-align: middle;">0.4571</td>
+                            <td style="vertical-align: middle;">0.4729</td>
+                            <td style="vertical-align: middle;">0.8355</td>
+                            <td style="vertical-align: middle;">0.4649</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2406.12793">GLM-4.7</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Z.ai</p></td>
+                            <td style="vertical-align: middle;">0.1905</td>
+                            <td style="vertical-align: middle;">0.1659</td>
+                            <td style="vertical-align: middle;">0.4067</td>
+                            <td style="vertical-align: middle;">1.8467</td>
+                            <td style="vertical-align: middle;">0.3474</td>
+                            <td style="vertical-align: middle;">0.8533</td>
+                            <td style="vertical-align: middle;">0.3727</td>
+                            <td style="vertical-align: middle;">0.3510</td>
+                            <td style="vertical-align: middle;">0.6168</td>
+                            <td style="vertical-align: middle;">0.3615</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://huggingface.co/Qwen/Qwen3-235B-A22B">Qwen3-235B-A22B</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p></td>
+                            <td style="vertical-align: middle;">0.4416</td>
+                            <td style="vertical-align: middle;">0.3524</td>
+                            <td style="vertical-align: middle;">0.8467</td>
+                            <td style="vertical-align: middle;">1.84</td>
+                            <td style="vertical-align: middle;">0.4131</td>
+                            <td style="vertical-align: middle;">0.9133</td>
+                            <td style="vertical-align: middle;">0.4936</td>
+                            <td style="vertical-align: middle;">0.4778</td>
+                            <td style="vertical-align: middle;">0.7607</td>
+                            <td style="vertical-align: middle;">0.4856</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0306437925001061">GPT-5.2</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p></td>
+                            <td style="vertical-align: middle;">0.3008</td>
+                            <td style="vertical-align: middle;">0.3167</td>
+                            <td style="vertical-align: middle;">0.8467</td>
+                            <td style="vertical-align: middle;">5.4667</td>
+                            <td style="vertical-align: middle;">0.3432</td>
+                            <td style="vertical-align: middle;">0.62</td>
+                            <td style="vertical-align: middle;">0.4368</td>
+                            <td style="vertical-align: middle;">0.4562</td>
+                            <td style="vertical-align: middle;">0.787</td>
+                            <td style="vertical-align: middle;">0.4463</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2507.06261">Gemini-3-Pro</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p></td>
+                            <td style="vertical-align: middle;">0.4109</td>
+                            <td style="vertical-align: middle;">0.4342</td>
+                            <td style="vertical-align: middle;">0.74</td>
+                            <td style="vertical-align: middle;">1.2867</td>
+                            <td style="vertical-align: middle;">0.4242</td>
+                            <td style="vertical-align: middle;">0.7867</td>
+                            <td style="vertical-align: middle;">0.5721</td>
+                            <td style="vertical-align: middle;">0.5495</td>
+                            <td style="vertical-align: middle;">0.7907</td>
+                            <td style="vertical-align: middle;">0.5606</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://www.anthropic.com/claude/sonnet">Claude-4.5</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Anthropic</p></td>
+                            <td style="vertical-align: middle;">0.1564</td>
+                            <td style="vertical-align: middle;">0.1072</td>
+                            <td style="vertical-align: middle;">0.1467</td>
+                            <td style="vertical-align: middle;">1.7733</td>
+                            <td style="vertical-align: middle;">0.3632</td>
+                            <td style="vertical-align: middle;">0.7733</td>
+                            <td style="vertical-align: middle;">0.3666</td>
+                            <td style="vertical-align: middle;">0.3328</td>
+                            <td style="vertical-align: middle;">0.6705</td>
+                            <td style="vertical-align: middle;">0.3489</td>
+                        </tr>
+
+                        <!-- API-Using Agent -->
+                        <tr>
+                            <td style="vertical-align: middle;">API-Using Agent</td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2210.03629">ReAct</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                            <td style="vertical-align: middle;">0.343</td>
+                            <td style="vertical-align: middle;">0.3779</td>
+                            <td style="vertical-align: middle;">0.7333</td>
+                            <td style="vertical-align: middle;">4.8267</td>
+                            <td style="vertical-align: middle;">0.2705</td>
+                            <td style="vertical-align: middle;">0.9933</td>
+                            <td style="vertical-align: middle;">0.5923</td>
+                            <td style="vertical-align: middle;">0.6015</td>
+                            <td style="vertical-align: middle;">0.7402</td>
+                            <td style="vertical-align: middle;">0.5969</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2406.11200">AvaTaR</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                            <td style="vertical-align: middle;">0.4313</td>
+                            <td style="vertical-align: middle;">0.4639</td>
+                            <td style="vertical-align: middle;">0.79</td>
+                            <td style="vertical-align: middle;">1.3867</td>
+                            <td style="vertical-align: middle;">0.3522</td>
+                            <td style="vertical-align: middle;">0.9267</td>
+                            <td style="vertical-align: middle;">0.6046</td>
+                            <td style="vertical-align: middle;">0.5894</td>
+                            <td style="vertical-align: middle;">0.826</td>
+                            <td style="vertical-align: middle;">0.5969</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2410.08197">DRAFT</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                            <td style="vertical-align: middle;">0.4199</td>
+                            <td style="vertical-align: middle;">0.4545</td>
+                            <td style="vertical-align: middle;">0.7667</td>
+                            <td style="vertical-align: middle;">1.3333</td>
+                            <td style="vertical-align: middle;">0.412</td>
+                            <td style="vertical-align: middle;">0.92</td>
+                            <td style="vertical-align: middle;">0.5873</td>
+                            <td style="vertical-align: middle;">0.5819</td>
+                            <td style="vertical-align: middle;">0.8217</td>
+                            <td style="vertical-align: middle;">0.5846</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/pdf/2503.14432">PLAY2PROMPT</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                            <td style="vertical-align: middle;">0.4308</td>
+                            <td style="vertical-align: middle;">0.4881</td>
+                            <td style="vertical-align: middle;">0.8333</td>
+                            <td style="vertical-align: middle;">1.5267</td>
+                            <td style="vertical-align: middle;">0.3968</td>
+                            <td style="vertical-align: middle;">0.9</td>
+                            <td style="vertical-align: middle;">0.6104</td>
+                            <td style="vertical-align: middle;">0.609</td>
+                            <td style="vertical-align: middle;">0.8542</td>
+                            <td style="vertical-align: middle;">0.610</td>
+                        </tr>
+
+                        <!-- Coding Agent -->
+                        <tr>
+                            <td style="vertical-align: middle;">Coding Agent</td>
+                            <td style="vertical-align: middle;"><a href="https://arxiv.org/abs/2402.01030">CodeAct</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                            <td style="vertical-align: middle;">0.4022</td>
+                            <td style="vertical-align: middle;">0.4313</td>
+                            <td style="vertical-align: middle;">0.8</td>
+                            <td style="vertical-align: middle;">1.3467</td>
+                            <td style="vertical-align: middle;">0.4047</td>
+                            <td style="vertical-align: middle;">0.9467</td>
+                            <td style="vertical-align: middle;">0.5144</td>
+                            <td style="vertical-align: middle;">0.5123</td>
+                            <td style="vertical-align: middle;">0.9295</td>
+                            <td style="vertical-align: middle;">0.5130</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://doi.org/10.1145/3690624.3709412">SoAy</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;"></p></td>
+                            <td style="vertical-align: middle;">0.4275</td>
+                            <td style="vertical-align: middle;">0.4306</td>
+                            <td style="vertical-align: middle;">0.8067</td>
+                            <td style="vertical-align: middle;">1.3067</td>
+                            <td style="vertical-align: middle;">0.3934</td>
+                            <td style="vertical-align: middle;">0.9667</td>
+                            <td style="vertical-align: middle;">0.541</td>
+                            <td style="vertical-align: middle;">0.5008</td>
+                            <td style="vertical-align: middle;">0.7225</td>
+                            <td style="vertical-align: middle;">0.5201</td>
+                        </tr>
+
+                        <!-- Deep Research Agent -->
+                        <tr>
+                            <td style="vertical-align: middle;">Deep Research Agent</td>
+                            <td style="vertical-align: middle;"><a href="https://www.perplexity.ai">Perplexity</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Perplexity AI</p></td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">0.3692</td>
+                            <td style="vertical-align: middle;">0.4251</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">0.3952</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"><a href="https://metaso.cn/search-api/playground">Metaso</a>
+                            <p style="font-size: 12px; margin-left: 5px; color: #858383;">Metaso</p></td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">0.2688</td>
+                            <td style="vertical-align: middle;">0.3025</td>
+                            <td style="vertical-align: middle;">/</td>
+                            <td style="vertical-align: middle;">0.2847</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <p style=" text-align: left;">
+
+                    </p>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mathvista_other">
+            <span class="mathvista_other" style="vertical-align: middle">AISE-Bench</span>
+        </h1>
+    </div>
+</section>
+
+<!-- <section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">State-of-the-art video understanding models struggle with basic motion-level perception.</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/images/motion-bench-cover.png" style="width: 50%;"/>
+                            <p style="margin-bottom: 30px;">Compared to existing benchmarks, our proposed MotionBench focuses on assessing the model’s Motion level perception capability, which is critical in understanding videos with fast and instant interactions and motions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section> -->
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Comparison of academic search Benchmarks</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/compare_bench.png" style="width: 100%;"/>
+                            <p style="margin-bottom: 30px;">
+                                The Entity column denotes the type of academic entity targeted by each QA task. In the Evaluation Metrics column, LLM indicates LLM-based semantic correctness, citations indicates that the references or links used in the answer need to be evaluated, and process indicates reasoning process evaluation. In the Annotation Modules column, evidence indicates that the supporting context for the answer needs to be located in the original text. Citations indicates that the answer must provide its referenced sources. API paths indicates that the API call traces, including the API inputs and outputs, need to be annotated.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">AISE-Bench construction pipeline</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/bench.png" style="width: 100%;"/>
+                            <p style="margin-bottom: 30px;">We first perform filtering and sampling based on real user queries from AMiner. Then, using a customized agent workflow (CAW), we generate initial API plans and answers for each query. Annotators refine the CAW-based plans and answers, and each annotated query is verified by at least one reviewer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Distribution of retrieval questions across four dimensions</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/pie_charts_final.png" style="width: 100%;"/>
+                            <p style="margin-bottom: 30px;">(a) User Intention: Search Org. = Search Organization; (b) Knowledge Level: Know. Mem. = Knowledge Memorization. Knowledge Understanding is further categorized into Examples, Comparison, Comprehension, and Summarization; (c) Planning Steps: number of steps of API calls. (d) Discipline: first-level discipline.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+
+<!--Statistics-->
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Overview of the API ecosystem</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/api_library.png" style="width: 90%;"/>
+                            <p style="margin-bottom: 30px;"> (a) API Library: Detailed specifications of available search and retrieval functions, including their types, input parameters, and return values. (b) API Graph: Schematic representation of the interaction flow between core entities (Paper, Author, Venue, and Org), where numbered labels correspond to the API IDs defined in the library.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Customized Agent Workflow</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/CAW1.png" style="width: 70%;"/>
+                            <p style="margin-bottom: 30px;"> Overview of the Customized Agent Workflow (CAW) framework, which consists of three main components: a planner, a task executor, and a synthesizer. The modular multi-agent design allows annotators to independently modify or customize individual modules.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+<!-- <section>
+    <div class="columns is-centered">
+        <div class="column">
+            <div class="content has-text-centered">
+                <h2 class="title is-3" style="margin-top: 30px;">Basic Statistics of MotionBench</h2>
+
+
+                <div class="container-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                    <div id="container"></div>
+                    <div id="image-container" style="margin-right: 20px;">
+                        <img src="static/images/statistics.png" alt="data-composition"
+                             style="max-width: 90%; display: inline-block;"/>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Evaluation Metrics</h2>
+                
+                <div class="content has-text-justified">
+                    <p>
+                        We propose a multi-dimensional evaluation framework covering reasoning, answer quality, and references. For API calling and planning, we measure graph edit distance and execution success rate. For references and formatting, we compare model-generated citations with gold annotations using precision and recall, and assess compliance with the required JSON output format. For answer content, we evaluate correctness and completeness, analogous to precision and recall against reference answers, and measure faithfulness by detecting inconsistencies with the API outputs.
+                    </p>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+<!--Experiments-->
+<section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mathvista_other">Experiments</h1>
+    </div>
+</section>
+
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Results across Question Types</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/radar_question_types.png" style="width: 70%;"/>
+                            <p style="margin-bottom: 30px;">The F1-LM score of representative methods on different types of problems (user intent understanding and API planning difficulty). 
+                            </p>
+                            <img src="static/image/knoeledge_level.png" style="width: 70%;"/>
+                            <p style="margin-bottom: 30px;">The performance of representative methods on queries of knowledge memorization and understanding.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths" style="width: 100%;">
+
+                <h2 class="title is-3">Case Studies</h2>
+                <div class="content has-text-justified">
+                    <div>
+                        <div class="content has-text-centered">
+                            <img src="static/image/case_study.png" style="width: 80%;"/>
+                            <p style="margin-bottom: 30px;">
+                                <strong>Representative case studies from the AISE-Bench test set.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+    </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+    <pre><code>@misc{hong2025motionbenchbenchmarkingimprovingfinegrained,
+      title={MotionBench: Benchmarking and Improving Fine-grained Video Motion Understanding for Vision Language Models},
+      author={Wenyi Hong and Yean Cheng and Zhuoyi Yang and Weihan Wang and Lefan Wang and Xiaotao Gu and Shiyu Huang and Yuxiao Dong and Jie Tang},
+      year={2025},
+      eprint={2501.02955},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.02955},
+}
+</code></pre>
+    </div>
+</section> -->
+
+<!-- <footer class="footer"> -->
+    <!-- <div class="container"> -->
+    <!-- <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8">
+            <div class="content">
+                <p style="text-align: center;">
+                    This website is adapted from <a href="https://lvbench.github.io/">LVBench</a>, licensed under a
+                    <a rel="license"
+                       href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+            </div>
+        </div>
+    </div> -->
+    <!-- </div> -->
+<!-- </footer> -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        updateRowNumbers();
+        document.querySelector("#results").addEventListener("click", updateRowNumbers);
+    });
+
+    function updateRowNumbers() {
+        const rows = document.querySelectorAll("#results tbody tr");
+        rows.forEach((row, index) => {
+            row.querySelector("td").innerText = index + 1;
+        });
+    }
+</script>
+
+</body>
+</html>
+
